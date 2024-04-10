@@ -1,0 +1,91 @@
+//
+// forms.scss
+//
+
+// Form-control light
+
+// Form elements (Color and Range)
+input.form-control[type="color"],
+input.form-control[type="range"] {
+    min-height: 39px;
+}
+
+select.form-control {
+    &:not([size]):not([multiple]) {
+        height: $input-height;
+    }
+}
+
+select.form-control-sm {
+    &:not([size]):not([multiple]) {
+        height: $input-height-sm;
+    }
+}
+
+// Form-control light
+.form-control-light {
+    background-color: var(--#{$prefix}light)  !important;
+    border-color: var(--#{$prefix}light)  !important;
+}
+
+
+// Comment box
+.comment-area-box {
+    .form-control {
+        border-color: var(--#{$prefix}gray-300);
+        border-radius: $input-border-radius $input-border-radius 0 0;
+    }
+
+    .comment-area-btn {
+        background-color: var(--#{$prefix}gray-100);
+        padding: 10px;
+        border: 1px solid var(--#{$prefix}gray-300);
+        border-top: none;
+        border-radius: 0 0 $input-border-radius $input-border-radius;
+    }
+}
+
+
+
+// Search box
+.search-bar {
+    .form-control {
+        padding-left: 40px;
+        padding-right: 20px;
+        border-radius: 30px;
+    }
+
+    span {
+        position: absolute;
+        z-index: 10;
+        font-size: 16px;
+        line-height: $input-height;
+        left: 13px;
+        top: -2px;
+        color: $text-muted;
+    }
+}
+
+// Show/Hide Password
+.password-eye {
+    cursor: pointer;
+
+    &:before {
+        font-family: "Material Design Icons";
+        content: "\F06D0";
+        font-style: normal;
+        font-weight: 400;
+        font-variant: normal;
+        vertical-align: middle;
+        line-height: 1.2;
+        font-size: 16px;
+    }
+}
+
+.show-password {
+    .password-eye {
+        &:before {
+            content: "\F06D1";
+        }
+    }
+}

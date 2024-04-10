@@ -1,0 +1,32 @@
+.nav-item{
+    font-size: 18px;
+    color: white;
+    padding: 0 15px 0 15px;
+}
+.nav-item-u{
+    border-bottom: solid 2px white;
+}
+.nav-item:hover{
+    font-size: 20px;
+    color: rgb(246, 240, 240);
+}
+.chatbar-item{
+    font-size: 18px;
+    color: rgb(13, 12, 12);
+    padding: 10px 15px 0 15px;
+}
+.chatbar-item:hover{
+    cursor: pointer;
+    background-color: rgb(39, 186, 186);
+    color: white;
+}
+.chatbar-item-text{
+    font-size: 18px;
+    padding: 0 15px 0 15px;
+}
+.flex-col{
+    flex-direction: column;
+}
+.chatbar{
+    background-color: white;
+}

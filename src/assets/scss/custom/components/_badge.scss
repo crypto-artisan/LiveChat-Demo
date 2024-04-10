@@ -1,0 +1,44 @@
+//
+// _badges.scss
+//
+.badge {
+    box-shadow: $box-shadow;
+}
+
+// Lighten badge
+@mixin badge-variant-light($bg) {
+    color: $bg;
+    background-color: rgba($bg, 0.18);
+    box-shadow: none;
+}
+
+// Outline badge
+
+@mixin badge-variant-outline($bg) {
+    color: $bg;
+    border: 1px solid $bg;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+
+@each $color, $value in $theme-colors {
+    // Lighten badge (soft)
+    .badge-soft-#{$color} {
+        @include badge-variant-light($value);
+    }
+
+    // Outline badge
+    .badge-outline-#{$color} {
+        @include badge-variant-outline($value);
+    }
+}
+
+.badge {
+    vertical-align: middle;
+
+    &.badge-lg {
+        padding: $badge-padding-y * 2 $badge-padding-x * 2.5;
+        font-size: $badge-font-size + 0.1em;
+    }
+}

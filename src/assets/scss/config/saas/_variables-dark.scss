@@ -1,0 +1,78 @@
+//
+// _variables-dark.scss (Dark color mode variables)
+//
+// Custom variables for the `[data-bs-theme="dark"]` theme. Use this as a starting point for your own custom color modes by creating a new theme-specific file like `_variables-dark.scss` and adding the variables you need.
+
+//
+// Global colors
+//
+
+// Dark Mode Background and Color
+$body-color-dark:                   #94a0ad;
+$body-bg-dark:                      #303841;
+
+// scss-docs-start sass-dark-mode-vars
+$primary-text-dark:                 $blue-300;
+$secondary-text-dark:               $gray-300;
+$success-text-dark:                 $green-300;
+$info-text-dark:                    $cyan-300;
+$warning-text-dark:                 $yellow-300;
+$danger-text-dark:                  $red-300;
+$light-text-dark:                   $gray-100;
+$dark-text-dark:                    $gray-300;
+
+$primary-bg-subtle-dark:            $blue-900;
+$secondary-bg-subtle-dark:          $gray-900;
+$success-bg-subtle-dark:            $green-900;
+$info-bg-subtle-dark:               $cyan-900;
+$warning-bg-subtle-dark:            $yellow-900;
+$danger-bg-subtle-dark:             $red-900;
+$light-bg-subtle-dark:              $gray-800;
+$dark-bg-subtle-dark:               mix($gray-800, $black);
+
+$primary-border-subtle-dark:        $blue-700;
+$secondary-border-subtle-dark:      $gray-700;
+$success-border-subtle-dark:        $green-700;
+$info-border-subtle-dark:           $cyan-800;
+$warning-border-subtle-dark:        $yellow-800;
+$danger-border-subtle-dark:         $red-700;
+$light-border-subtle-dark:          $gray-700;
+$dark-border-subtle-dark:           $gray-800;
+
+$body-emphasis-color-dark:          $gray-100;
+$emphasis-color-dark:               $white;
+
+$body-secondary-color-dark:         $body-color-dark;
+$body-secondary-bg-dark:            #36404a;
+
+$body-tertiary-color-dark:          rgba($body-color-dark, .5);
+$body-tertiary-bg-dark:             mix($gray-800, $gray-900, 50%);
+
+$border-color-dark:                 #424e5a;
+$border-color-translucent-dark:     rgba($white, .15);
+
+$headings-color-dark:               #fff;
+
+$link-color-dark:                   $blue-300;
+$link-hover-color-dark:             $blue-200;
+
+$code-color-dark:                   $pink-300;
+
+//
+// Forms
+//
+
+$form-select-indicator-color-dark:  $body-color-dark;
+$form-select-indicator-dark:        url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='#{$form-select-indicator-color-dark}' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
+
+$form-switch-color-dark:            rgba($white, .25);
+$form-switch-bg-image-dark:         url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$form-switch-color-dark}'/></svg>");
+
+
+//
+// Accordion
+//
+
+$accordion-button-icon-dark:         url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$primary-text-dark}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+$accordion-button-active-icon-dark:  url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$primary-text-dark}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+// scss-docs-end sass-dark-mode-vars

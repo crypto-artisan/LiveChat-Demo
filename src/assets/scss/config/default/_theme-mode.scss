@@ -1,0 +1,226 @@
+// 
+// light-mode.scss (:root variable)
+// 
+
+// ===================================================== //
+// ======== Real Time Customistion :root Variable ========  //
+// ===================================================== //
+
+:root {
+    --#{$prefix}logo-lg-height:           20px;
+    --#{$prefix}logo-sm-height:           22px;
+
+    --#{$prefix}leftbar-width:            240px;
+    --#{$prefix}leftbar-width-md:         175px;
+    --#{$prefix}leftbar-width-sm:         80px;
+    --#{$prefix}leftbar-condensed-height: 1600px;
+
+    --#{$prefix}twocolumn-sidebar-width:            220px;
+    --#{$prefix}twocolumn-sidebar-iconview-width:   70px;
+    --#{$prefix}twocolumn-sidebar-iconview-size:    22px;
+
+    --#{$prefix}topbar-height:             70px;
+
+    --#{$prefix}horizontal-menu-height:    55px;
+
+    --#{$prefix}menu-transition:            all .1s ease-in-out;
+
+    --#{$prefix}menu-item-padding-x:        10px;
+    --#{$prefix}menu-item-gap:              5px;
+    
+    --#{$prefix}menu-link-padding-x:       15px;
+    --#{$prefix}menu-link-padding-y:       10px;
+    
+    --#{$prefix}menu-link-item-gap:        10px;
+
+    --#{$prefix}menu-item-icon-size:       16px;
+    --#{$prefix}menu-item-font-size:       15.2px;
+
+    --#{$prefix}footer-height:             60px;
+
+    --#{$prefix}boxed-layout-width:    1300px;
+}
+
+
+// ===================================================== //
+// =========== Light Mode Components Shadow ===========  //
+// ===================================================== //
+
+:root, html[data-bs-theme="light"] {
+
+    // scss-docs-start box-shadow-variables
+    --#{$prefix}box-shadow:                                    0px 0px 35px 0px #{rgba(154, 161, 171, 0.15)};
+    --#{$prefix}box-shadow-sm:                                 0 0.75rem 6rem #{rgba(56, 65, 74,.03)};
+    --#{$prefix}box-shadow-lg:                                 0 0 45px 0 #{rgba(0, 0, 0, 0.12)};
+    --#{$prefix}box-shadow-inset:                              inset 0 1px 2px #{rgba($black, .075)};
+
+    // Card Border
+    --#{$prefix}theme-border-width:      0px;
+}
+
+
+// ===================================================== //
+// ================= Dark Mode Color ==================  //
+// ===================================================== //
+
+html[data-bs-theme="dark"] {
+
+    $gray-100: #323a46;
+    $gray-200: #36404a;
+    $gray-300: #424e5a;
+    $gray-400: #5d7186;
+    $gray-500: #8c98a5;
+    $gray-600: #cedeef;
+    $gray-700: #dee2e6;
+    $gray-800: #f7f7f7;
+    $gray-900: #f3f7f9;
+
+    $grays: (
+        "100": $gray-100,
+        "200": $gray-200,
+        "300": $gray-300,
+        "400": $gray-400,
+        "500": $gray-500,
+        "600": $gray-600,
+        "700": $gray-700,
+        "800": $gray-800,
+        "900": $gray-900,
+    );
+
+    // Prefix gray variables
+    @each $color, $value in $grays {
+        --#{$prefix}gray-#{$color}: #{$value};
+    }
+
+    // theme-color
+    --#{$prefix}light:       #{$gray-300};
+    --#{$prefix}light-rgb:   #{to-rgb($gray-300)};
+    --#{$prefix}dark:        #{$gray-900};
+    --#{$prefix}dark-rgb:    #{to-rgb($gray-900)};
+
+    // text-muted color
+    --#{$prefix}gray:        #{$gray-500};
+
+    // scss-docs-start box-shadow-variables
+    --#{$prefix}box-shadow: 0px 0px 35px 0px #{rgba(66, 72, 80, 0.15)};
+    --#{$prefix}box-shadow-sm: 0 0.75rem 6rem #{rgba(56, 65, 74, 0.03)};
+    --#{$prefix}box-shadow-lg: 0 0 45px 0 #{rgba(0, 0, 0, 0.12)};
+    --#{$prefix}box-shadow-inset: inset 0 -0.1rem 0 #{rgba($black, 0.075)};
+}
+
+
+// ===================================================== //
+// ==================== Main Menu =====================  //
+// ===================================================== //
+
+// Background Light left-sidebar
+html[data-menu-color="light"] {
+    --#{$prefix}menu-bg:                             #fff;
+    --#{$prefix}menu-item-color:                       #{$gray-700};
+    --#{$prefix}menu-item-hover-color:                 #{$primary};
+    --#{$prefix}menu-item-active-color:                #{$primary};
+    --#{$prefix}menu-icon-twotone-fill:                #{rgba($primary, 0.2)};
+    --#{$prefix}menu-item-active-bg:                   #{rgba($primary, 0.2)};
+}
+
+// Dark Left Sidebar
+html[data-menu-color="dark"],
+html[data-bs-theme="dark"][data-menu-color="light"] {
+    --#{$prefix}menu-bg:                               #37424c;
+    --#{$prefix}menu-item-color:                       #9097a7;
+    --#{$prefix}menu-item-hover-color:                 #c8cddc;
+    --#{$prefix}menu-item-active-color:                #{$primary};
+    --#{$prefix}menu-icon-twotone-fill:                #{rgba($primary, 0.2)};
+    --#{$prefix}menu-item-active-bg:                   #{rgba($primary, 0.2)};
+}
+
+// Brand Menu
+html[data-menu-color="brand"] {
+    --#{$prefix}menu-bg:                               #{$primary};
+    --#{$prefix}menu-item-color:                     #cedce4;
+    --#{$prefix}menu-item-hover-color:               #ffffff;
+    --#{$prefix}menu-item-active-color:              #ffffff;
+    --#{$prefix}menu-icon-twotone-fill:               rgba(255, 255, 255, 0.2);
+    --#{$prefix}menu-item-active-bg:                 rgba(255, 255, 255, 0.2);
+}
+
+// gradient Menu
+html[data-menu-color="gradient"] {
+    --#{$prefix}menu-bg:                             #683ba9;
+    --#{$prefix}menu-item-color:                     #cedce4;
+    --#{$prefix}menu-item-hover-color:               #ffffff;
+    --#{$prefix}menu-item-active-color:              #ffffff;
+    --#{$prefix}menu-icon-twotone-fill:              rgba(255, 255, 255, 0.2);
+    --#{$prefix}menu-gradient-image:                  linear-gradient(270deg, rgba(64, 149, 216, 0.15), transparent);
+    --#{$prefix}menu-item-active-bg:                rgba(255, 255, 255, 0.2);
+}
+
+// ================================================================================ //
+// ==================== Two Column Icon Menu Background Color ===================== //
+// ================================================================================ //
+
+// Light
+html[data-two-column-color="light"] {
+    --#{$prefix}twocolumn-iconview-bg:                             #fff;
+    --#{$prefix}twocolumn-iconview-item-color:                       #{$gray-700};
+    --#{$prefix}twocolumn-iconview-item-hover-color:                 #{$primary};
+    --#{$prefix}twocolumn-iconview-item-active-color:                #{$primary};
+    --#{$prefix}twocolumn-iconview-icon-active-bg:                   #{rgba($primary, 0.2)};
+}
+
+// Dark Left Sidebar
+html[data-two-column-color="dark"],
+html[data-bs-theme="dark"][data-two-column-color="light"] {
+    --#{$prefix}twocolumn-iconview-bg:                               #37424c;
+    --#{$prefix}twocolumn-iconview-item-color:                       #9097a7;
+    --#{$prefix}twocolumn-iconview-item-hover-color:                 #c8cddc;
+    --#{$prefix}twocolumn-iconview-item-active-color:                #{$white};
+    --#{$prefix}twocolumn-iconview-icon-active-bg:                   #{rgba($primary, 0.2)};
+}
+
+// Brand Menu
+html[data-two-column-color="brand"] {
+    --#{$prefix}twocolumn-iconview-bg:                              #{$primary};
+    --#{$prefix}twocolumn-iconview-item-color:                     #cedce4;
+    --#{$prefix}twocolumn-iconview-item-hover-color:               #ffffff;
+    --#{$prefix}twocolumn-iconview-item-active-color:              #ffffff;
+    --#{$prefix}twocolumn-iconview-icon-active-bg:                 rgba(255, 255, 255, 0.2);
+}
+
+// gradient Menu
+html[data-two-column-color="gradient"] {
+    --#{$prefix}twocolumn-iconview-bg:                              #683ba9;
+    --#{$prefix}twocolumn-iconview-item-color:                     #cedce4;
+    --#{$prefix}twocolumn-iconview-item-hover-color:               #ffffff;
+    --#{$prefix}twocolumn-iconview-item-active-color:              #ffffff;
+    --#{$prefix}twocolumn-iconview-icon-active-bg:                rgba(255, 255, 255, 0.2);
+}
+
+// ==================================================== //
+// ==================== Topbar ======================== //
+// ==================================================== //
+
+// Light Topbar
+html[data-topbar-color="light"] {
+    --#{$prefix}topbar-bg:                         #fff;
+    --#{$prefix}topbar-item-color:                 #{$gray-700};
+    --#{$prefix}topbar-item-hover-color:           #{$primary};
+    --#{$prefix}topbar-search-bg:                  #{tint-color($gray-200,10%)};
+}
+
+// Dark Topbar
+html[data-topbar-color="dark"],
+html[data-bs-theme="dark"][data-topbar-color="light"] {
+    --#{$prefix}topbar-bg:                  #38414a;
+    --#{$prefix}topbar-item-color:          rgba(255,255,255,.6);
+    --#{$prefix}topbar-item-hover-color:    #bccee4;
+    --#{$prefix}topbar-search-bg:           #464f5b;
+}
+
+// Brand Topbar
+html[data-topbar-color="brand"] {
+    --#{$prefix}topbar-bg:                         #{linear-gradient(135deg, #6379c3 0%, #546ee5 60%)};
+    --#{$prefix}topbar-item-color:                 rgba(255, 255, 255, 0.7);
+    --#{$prefix}topbar-item-hover-color:           #ffffff;
+    --#{$prefix}topbar-search-bg:                  rgba(255, 255, 255, 0.1);
+}

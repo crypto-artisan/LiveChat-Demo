@@ -1,0 +1,38 @@
+//
+// type.scss
+//
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 10px 0;
+}
+
+// Font sizes (Custom)
+
+$font-size-mixing: 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 36, 48;
+
+@each $font-size-mixing in $font-size-mixing {
+    .font-#{$font-size-mixing} {
+        font-size: #{$font-size-mixing}px !important;
+    }
+}
+
+// Font Weight
+
+.fw-medium {
+    font-weight: $font-weight-medium;
+}
+
+.fw-semibold {
+    font-weight: $font-weight-semibold;
+}

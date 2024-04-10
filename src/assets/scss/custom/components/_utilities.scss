@@ -1,0 +1,19 @@
+//
+// utilities.scss
+//
+
+@each $color, $value in $theme-colors {
+    .bg-soft-#{$color} {
+        --#{$prefix}bg-opacity: 0.25;
+        background-color: rgba(var(--#{$prefix}#{$color}-rgb), var(--#{$prefix}bg-opacity)) !important;
+    }
+}
+
+.bg-ghost {
+    --#{$prefix}bg-opacity: 0.4;
+}
+
+// border style
+.border-dashed {
+    border-style: dashed !important;
+}

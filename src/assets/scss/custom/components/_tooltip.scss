@@ -1,0 +1,12 @@
+//
+// _tooltip.scss
+//
+
+
+@each $color,
+$value in $theme-colors {
+    .#{$color}-tooltip {
+        --#{$prefix}tooltip-bg: var(--#{$prefix}#{$color}) !important;
+        --#{$prefix}tooltip-color: white !important;
+    }
+}

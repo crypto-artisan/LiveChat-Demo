@@ -1,0 +1,271 @@
+//
+// _horizontal.scss
+//
+
+html[data-layout="horizontal"] {
+
+    #wrapper {
+        flex-direction: column;
+    }
+
+    .menu,
+    .topbar,
+    .content,
+    footer>* {
+        width: 100%;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .content {
+        min-height: calc(100vh - $topbar-height - $horizontal-menu-height);
+    }
+
+    .navbar-custom {
+        margin-top: calc($topbar-height * -1);
+        margin-bottom: $topbar-height;
+        box-shadow: none;
+
+        .topbar {
+
+            .logo-box {
+                display: flex;
+                background: transparent;
+            }
+
+            .button-toggle-menu {
+                display: none;
+            }
+        }
+    }
+
+    .app-menu {
+        display: flex;
+        align-items: center;
+        height: $horizontal-menu-height;
+        min-height: $horizontal-menu-height;
+        max-height: $horizontal-menu-height;
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+        z-index: 999;
+        top: $topbar-height;
+        padding: 0;
+        border-radius: 0;
+        border-top: 1px solid $topbar-search-bg;
+
+
+        .user-box,
+        .logo-box {
+            display: none;
+        }
+
+        .menu {
+            flex-direction: row;
+            margin: 0 5%;
+            width: 100%;
+            min-width: 100%;
+            max-width: 100%;
+            padding: 0 $spacer;
+
+
+            >.menu-item {
+                >.menu-link {
+                    height: $horizontal-menu-height;
+                    
+                    >.menu-icon {
+                        margin-top: -4px;
+                    }
+                }
+
+                &:first-of-type {
+                    >.menu-link {
+                        padding-left: 0;
+                    }
+                }
+            }
+
+            .menu-item {
+                position: relative;
+                padding: 0 $menu-item-gap;
+
+                .menu-link {
+                    >.menu-text {
+                        padding-left: 0;
+                    }
+
+                    .menu-arrow {
+                        transform: rotate(90deg);
+                    }
+                }
+
+                &:hover {
+
+                    .menu-arrow {
+                        transform: rotate(270deg);
+                    }
+
+                    >.collapse,
+                    >.collapsing {
+                        display: block !important;
+                        position: absolute;
+                        height: inherit !important;
+                        transition: none !important;
+                    }
+                }
+
+                // Mutli Level Menu
+                .sub-menu {
+                    padding: $menu-item-gap 0;
+
+                    .menu-arrow {
+                        transform: rotate(0deg);
+                    }
+                }
+
+                &.menuitem-active {
+
+                    >.menu-link {
+
+                        &:not(.collapsed) {
+                            >.menu-arrow {
+                                transform: rotate(90deg);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .collapse,
+        .collapsing {
+            width: 200px;
+            display: none;
+            animation-duration: 0.3s;
+            animation-fill-mode: both;
+            background-clip: padding-box;
+            background: $dropdown-bg;
+            animation-name: DropDownSlide;
+            z-index: $zindex-dropdown;
+            box-shadow: var(--#{$prefix}box-shadow-lg);
+            border-radius: $dropdown-border-radius;
+            border: $dropdown-border-width solid $dropdown-border-color;
+
+            .menu-item {
+                .menu-link {
+                    color: $dropdown-color;
+
+                    &[aria-expanded="true"],
+                    &.show,
+                    &:focus,
+                    &:hover {
+                        color: $dropdown-link-hover-color;
+                    }
+                }
+
+                &.menuitem-active {
+
+                    >.menu-link {
+                        color: $dropdown-link-active-color;
+                        background-color: $dropdown-link-active-bg;
+                    }
+                }
+
+                .collapse,
+                .collapsing {
+                    top: 0;
+                }
+            }
+
+            &.collapse-lg {
+                width: 30rem;
+
+                .sub-menu {
+                    grid-template-columns: repeat(3, minmax(0, 1fr));
+                }
+            }
+
+            &.collapse-md {
+                width: 20rem;
+
+                .sub-menu {
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                }
+            }
+        }
+    }
+
+    #layout-mode,
+    #sidebar-user,
+    .menu-title,
+    #sidebar-size {
+        display: none;
+    }
+}
+
+
+@media (min-width: 992px) {
+    html[data-layout="horizontal"] {
+
+        .collapse,
+        .collapsing {
+
+            .collapse,
+            .collapsing {
+                left: 100%;
+                right: auto;
+            }
+        }
+    }
+}
+
+@media (max-width: 1700px) {
+    html[data-layout="horizontal"] {
+
+        .collapse,
+        .collapsing {
+
+            .collapse,
+            .collapsing {
+                right: 100%;
+                left: auto;
+            }
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    html[data-layout="horizontal"] {
+
+        .collapse-lg,
+        .collapse-md {
+
+            .collapse,
+            .collapsing {
+                right: 100% !important;
+                left: auto !important;
+            }
+        }
+    }
+}
+
+// Layout-boxed (Layout Mode)
+@include media-breakpoint-up(xxl) {
+    html[data-layout="horizontal"][data-layout-width="boxed"] {
+        #wrapper {
+            box-shadow: $box-shadow;
+            width: 100%;
+            max-width: $boxed-layout-width;
+            margin: 0 auto;
+
+            .menu,
+            .topbar,
+            .content,
+            footer>* {
+                width: 100%;
+                max-width: 100%;
+                margin: 0 auto;
+            }
+        }
+    }
+}

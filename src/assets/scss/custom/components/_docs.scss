@@ -1,0 +1,197 @@
+//
+// docs.scss
+//
+//
+// _prismjs.scss
+//
+
+:not(pre)>code[class*="language-"],
+pre[class*="language-"] {
+    background: transparent;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+    color: black;
+    background: none;
+    text-shadow: 0 1px white;
+    font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    font-size: 1em;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    tab-size: 4;
+    hyphens: none;
+}
+
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::selection,
+code[class*="language-"]::selection,
+code[class*="language-"] ::selection {
+    text-shadow: none;
+    background: #b3d4fc;
+}
+
+@media print {
+
+    code[class*="language-"],
+    pre[class*="language-"] {
+        text-shadow: none;
+    }
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+    padding: 1em;
+    margin: 0;
+    overflow: auto;
+}
+
+/* Inline code */
+:not(pre)>code[class*="language-"] {
+    padding: 0.1em;
+    border-radius: 0.3em;
+    white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: slategray;
+}
+
+.token.punctuation {
+    color: $primary;
+}
+
+.token.namespace {
+    opacity: 0.7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+    color: $primary;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+    color: $success;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+    color: #9a6e3a;
+    /* This background color was intended by the author of this theme. */
+    background: transparent;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+    color: $danger;
+}
+
+.token.function,
+.token.class-name {
+    color: #dd4a68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+    color: #e90;
+}
+
+.token.important,
+.token.bold {
+    font-weight: bold;
+}
+
+.token.italic {
+    font-style: italic;
+}
+
+.token.entity {
+    cursor: help;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+    color: var(--#{$prefix}secondary-color);
+    text-shadow: none;
+    max-height: 220px;
+}
+
+// Scrollbar
+.tab-pane.code {
+    position: relative;
+
+    pre {
+        &::-webkit-scrollbar {
+            -webkit-appearance: none;
+        }
+
+        &::-webkit-scrollbar:vertical {
+            width: 5px;
+            margin-right: 5px;
+        }
+
+        &::-webkit-scrollbar:horizontal {
+            height: 5px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba(var(--#{$prefix}dark-rgb), 0.2);
+            border-radius: 10px;
+            margin-right: 5px;
+            border: none;
+        }
+
+        &::-webkit-scrollbar-track {
+            border-radius: 10px;
+            background-color: transparent;
+        }
+
+        &::-webkit-scrollbar-corner {
+            background-color: transparent;
+        }
+    }
+
+    .btn-copy-clipboard {
+        position: absolute;
+        right: 8px;
+        top: 10px;
+        background-color: $card-bg;
+        border: 1px solid $success;
+        color: $success;
+        padding: 0.28rem 0.8rem;
+        font-size: 0.875rem;
+        border-radius: 0.15rem;
+        font-weight: 400;
+        line-height: 1.5;
+        transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: $success;
+            color: $white;
+        }
+    }
+}

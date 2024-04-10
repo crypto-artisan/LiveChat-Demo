@@ -1,0 +1,25 @@
+//
+// alert.scss
+//
+
+
+@each $color, $value in $theme-colors {
+    .alert-#{$color} {
+        --#{$prefix}alert-color: #{shift-color($value, 30%)};
+        --#{$prefix}alert-bg: #{rgba($value, 0.18)};
+        --#{$prefix}alert-border-color: #{rgba($value, 0.18)};
+        .alert-link {
+            --#{$prefix}alert-color: #{shade-color($value, 30%)};
+        }
+    }
+}
+
+
+@each $state in map-keys($theme-colors) {
+    .alert-outline-#{$state} {
+        --#{$prefix}alert-color: var(--#{$prefix}#{$state}-text);
+        --#{$prefix}alert-bg: transparent;
+        --#{$prefix}alert-border-color: var(--#{$prefix}#{$state}-border-subtle);
+        --#{$prefix}alert-link-color: var(--#{$prefix}#{$state}-text);
+    }   
+}

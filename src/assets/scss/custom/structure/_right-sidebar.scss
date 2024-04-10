@@ -1,0 +1,69 @@
+//
+// _right-sidebar.scss
+//
+
+.right-bar {
+    width: 260px !important;
+}
+
+
+.user-box {
+    padding: 25px;
+    text-align: center;
+
+    .user-img {
+        position: relative;
+        height: 64px;
+        width: 64px;
+        margin: 0 auto 15px auto;
+
+        .user-edit {
+            position: absolute;
+            right: -5px;
+            bottom: 0px;
+            height: 24px;
+            width: 24px;
+            background-color: $white;
+            line-height: 24px;
+            border-radius: 50%;
+            box-shadow: $box-shadow-lg;
+        }
+    }
+
+    h5 {
+        margin-bottom: 2px;
+
+        a {
+            color: var(--#{$prefix}gray-900);
+        }
+    }
+}
+
+.notification-item {
+    .noti-user-item {
+        padding: 0.75rem 1rem;
+
+        &:hover {
+            background-color: $dropdown-link-hover-bg;
+        }
+    }
+
+    .user-status {
+        position: absolute;
+        right: 0px;
+        bottom: -4px;
+        font-size: 10px;
+
+        &.online {
+            color: $success;
+        }
+
+        &.away {
+            color: $warning;
+        }
+
+        &.busy {
+            color: $danger;
+        }
+    }
+}

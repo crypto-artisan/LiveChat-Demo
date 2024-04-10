@@ -1,0 +1,25 @@
+//
+// jstree.scss
+//
+
+.jstree-default {
+    padding: 2px 6px;
+    height: auto;
+    .jstree-clicked,
+    .jstree-hovered {
+        background: var(--#{$prefix}gray-100);
+        box-shadow: none;
+    }
+    .jstree-anchor,
+    .jstree-icon,
+    .jstree-icon:empty {
+        line-height: 20px;
+    }
+}
+
+.jstree-wholerow {
+    &.jstree-wholerow-clicked,
+    &.jstree-wholerow-hovered {
+        background: var(--#{$prefix}gray-100);
+    }
+}

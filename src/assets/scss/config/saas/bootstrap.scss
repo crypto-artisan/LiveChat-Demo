@@ -1,0 +1,48 @@
+/*
+Template Name: Ubold - Responsive Bootstrap 5 Admin Dashboard
+Version: 6.1.0
+Author: CoderThemes
+Email: support@coderthemes.com
+File: Bootstrap Css File
+*/
+
+// Core files
+@import "./node_modules/bootstrap/scss/functions";
+@import "./node_modules/bootstrap/scss/variables";
+@import "variables-default";
+@import "variables-dark";
+@import "./node_modules/bootstrap/scss/bootstrap";
+
+// Components
+@import "../../custom/components/accordions";
+@import "../../custom/components/alert";
+@import "../../custom/components/avatar";
+@import "../../custom/components/breadcrumb";
+@import "../../custom/components/buttons";
+@import "../../custom/components/card";
+@import "../../custom/components/custom-forms";
+@import "../../custom/components/dropdown";
+@import "../../custom/components/forms";
+@import "../../custom/components/mixins";
+@import "../../custom/components/badge";
+@import "../../custom/components/modal";
+@import "../../custom/components/nav";
+@import "../../custom/components/pagination";
+@import "../../custom/components/popover";
+@import "../../custom/components/print";
+@import "../../custom/components/progress";
+@import "../../custom/components/reboot";
+@import "../../custom/components/ribbons";
+@import "../../custom/components/switch";
+@import "../../custom/components/tables";
+@import "../../custom/components/type";
+@import "../../custom/components/tooltip";
+@import "../../custom/components/utilities";
+
+// Extra Components
+@import "../../custom/components/docs";
+@import "../../custom/components/widgets";
+@import "../../custom/components/social";
+@import "../../custom/components/steps";
+@import "../../custom/components/preloader";
+@import "../../custom/components/hero";
