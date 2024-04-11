@@ -73,10 +73,12 @@ const AllRoutes = (props: IRoutesProps) => {
             <Route
               path={route.path}
               element={
-                api.isUserAuthenticated() === true ? (
+                api.isUserAuthenticated() === false ? (
                   <Navigate
                     to={{
-                      pathname: "/apps/chat"
+                      pathname: "/auth/login",
+                      // hash:route.path,
+                      search: "next=" + route.path,
                     }}
                   />
                 ) : (
